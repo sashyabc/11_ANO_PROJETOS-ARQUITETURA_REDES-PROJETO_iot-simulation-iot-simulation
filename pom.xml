@@ -2,6 +2,7 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>pt.projeto.iot</groupId>
@@ -11,13 +12,25 @@
 
   <properties>
     <java.version>17</java.version>
+    <junit.version>5.10.2</junit.version>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
   </properties>
 
+  <dependencies>
+    <!-- Dependência de teste para todos os módulos -->
+    <dependency>
+      <groupId>org.junit.jupiter</groupId>
+      <artifactId>junit-jupiter</artifactId>
+      <version>${junit.version}</version>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+
   <build>
     <pluginManagement>
       <plugins>
+        <!-- Compilar todos os módulos para Java 17 -->
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-compiler-plugin</artifactId>
@@ -26,6 +39,8 @@
             <release>${java.version}</release>
           </configuration>
         </plugin>
+
+        <!-- Testes JUnit 5 -->
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-surefire-plugin</artifactId>
@@ -40,6 +55,30 @@
 
   <modules>
     <module>common</module>
-    <module>app</module>
+    <module>temperature-sensor</module>
+    <module>humidity-sensor</module>
+    <module>pir-motion-sensor</module>
+    <module>smart-lamp</module>
+    <module>smart-plug</module>
+    <module>smart-lock</module>
+    <module>smoke-sensor</module>
+    <module>camera-sim</module>
+    <module>robot-vacuum</module>
+    <module>air-quality-sensor</module>
+    <module>weather-station</module>
+    <module>thermostat</module>
+    <module>energy-meter</module>
+    <module>soil-sensor</module>
+    <module>agri-drone</module>
+    <module>smart-dispenser</module>
+    <module>gate-controller</module>
+    <module>water-level-sensor</module>
+    <module>smart-traffic-light</module>
+    <module>vibration-sensor</module>
+    <module>heart-rate-monitor</module>
+    <module>oximeter</module>
+    <module>rfid-reader</module>
+    <module>gps-tracker</module>
   </modules>
+
 </project>
